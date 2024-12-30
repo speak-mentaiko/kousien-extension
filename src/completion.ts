@@ -95,15 +95,15 @@ export default class Completions implements vscode.CompletionItemProvider {
     mapAllCompletion.insertText = new vscode.SnippetString("map_all");
     items.push(mapAllCompletion);
 
-    // locate_object
-    const locateObjectCompletion = new vscode.CompletionItem(
-      "locate_object",
+    // locate_objects
+    const locateObjectsCompletion = new vscode.CompletionItem(
+      "locate_objects",
       vscode.CompletionItemKind.Method
     );
-    locateObjectCompletion.insertText = new vscode.SnippetString(
-      "locate_object($0)"
+    locateObjectsCompletion.insertText = new vscode.SnippetString(
+      "locate_objects($0)"
     );
-    items.push(locateObjectCompletion);
+    items.push(locateObjectsCompletion);
 
     // cent:
     const centCompletion = new vscode.CompletionItem(
@@ -111,7 +111,7 @@ export default class Completions implements vscode.CompletionItemProvider {
       vscode.CompletionItemKind.Property
     );
     centCompletion.insertText = new vscode.SnippetString("cent:($0)");
-    if (beforeCursor.includes("locate_object(")) {
+    if (beforeCursor.includes("locate_objects(")) {
       items.push(centCompletion);
     }
 
@@ -121,7 +121,7 @@ export default class Completions implements vscode.CompletionItemProvider {
       vscode.CompletionItemKind.Property
     );
     sqSizeCompletion.insertText = new vscode.SnippetString("sq_size:($0)");
-    if (beforeCursor.includes("locate_object(")) {
+    if (beforeCursor.includes("locate_objects(")) {
       items.push(sqSizeCompletion);
     }
 
@@ -131,7 +131,7 @@ export default class Completions implements vscode.CompletionItemProvider {
       vscode.CompletionItemKind.Property
     );
     objectsCompletion.insertText = new vscode.SnippetString("objects:($0)");
-    if (beforeCursor.includes("locate_object(")) {
+    if (beforeCursor.includes("locate_objects(")) {
       items.push(objectsCompletion);
     }
 
